@@ -7,6 +7,19 @@ let mouseY = window.innerHeight/2;
 let currentX = mouseX;
 let currentY = mouseY;
 
+document.addEventListener("keydown", (e) => {
+
+    if (
+        (e.ctrlKey && e.key.toLowerCase() === "c") ||
+        (e.ctrlKey && e.key.toLowerCase() === "a") ||
+        (e.ctrlKey && e.key.toLowerCase() === "s") ||
+        (e.ctrlKey && e.key.toLowerCase() === "u")
+    ) {
+        e.preventDefault();
+    }
+
+});
+
 document.addEventListener("mousemove",e=>{
 
     mouseX = e.clientX;
