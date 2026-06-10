@@ -113,11 +113,11 @@ models.forEach(model => {
 
 const btn = document.querySelector(".download-btn");
 
-fetch("https://raw.githubusercontent.com/USER/REPO/main/Installs/latest.json")
+fetch("https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/latest.json")
   .then(r => r.json())
   .then(data => {
 
-      const url = `https://raw.githubusercontent.com/USER/REPO/main/Installs/${data.file}`;
+      const url = `https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/${data.file}`;
 
       btn.href = url;
       btn.innerText = `DOWNLOAD GAME v${data.version}`;
