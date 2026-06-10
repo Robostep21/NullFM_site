@@ -214,3 +214,19 @@ body{
     0%,100%{opacity:1;}
     50%{opacity:0.2;}
 }
+
+.model-block{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+.model-text{
+    max-width:40vw;
+    font-size:12px;
+    opacity:0.7;
+    text-align:center;
+    line-height:1.5;
+    color:#d6ffe7;
+}
