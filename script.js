@@ -44,3 +44,34 @@ document.addEventListener('keydown', (e)=>{
         viewer.style.display = 'none';
     }
 });
+
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+let locked = false;
+
+function goToSlide(i){
+    if(i < 0 || i >= slides.length) return;
+
+    locked = true;
+    currentSlide = i;
+
+    slides[i].scrollIntoView({
+        behavior: "smooth"
+    });
+
+    setTimeout(() => {
+        locked = false;
+    }, 800);
+}
+
+window.addEventListener("wheel", (e) => {
+    if(locked) return;
+
+    if(e.deltaY > 0){
+        goToSlide(currentSlide + 1);
+    } else {
+        goToSlide(currentSlide - 1);
+    }
+});
