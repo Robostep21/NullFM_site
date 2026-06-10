@@ -1,3 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Null FM | v2.1</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="cursor-light"></div>
+
+    <header>
+        <div class="rec">
+            <span class="dot"></span>
+            REC
+        </div>
+        <div class="version">v2.1</div>
+    </header>
+
+    <!-- TICKER -->
+    <div class="ticker">
+        <div class="ticker-text" id="tickerText">
+            ▣ SIGNAL LOCKED ▣ FREQUENCY STABLE ▣ NULL FM BROADCASTING ▣ DO NOT TUNE OUT ▣
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>NULL FM</h1>
+        <p>Experimental Radio Game Transmission</p>
+
+        <a class="download-btn" href="NullFM_install.exe" download>
+            DOWNLOAD GAME
+        </a>
+    </section>
+
+    <!-- GALLERY -->
 <section class="gallery">
 
     <div class="card">
@@ -37,3 +77,14 @@
     </div>
 
 </section>
+
+    <!-- FULLSCREEN VIEWER -->
+    <div id="viewer">
+        <span id="closeViewer">✕</span>
+        <img id="viewerImg">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
