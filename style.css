@@ -85,15 +85,12 @@ header{
 }
 
 .gallery-img{
-    width:100%;
+    width: 100%;
+    height: auto;
+    display: block;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    display:block;
-
-    cursor:pointer;
-
-    border:none;
-    transition:0.25s;
+    cursor: pointer;
 }
 
 .gallery-img:hover{
