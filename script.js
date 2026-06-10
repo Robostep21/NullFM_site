@@ -120,7 +120,7 @@ fetch("https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/la
       const url = `https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/latest.json${data.file}`;
 
       btn.href = url;
-      btn.innerText = `DOWNLOAD GAME v${data.version}`;
+      btn.innerText = `DOWNLOAD INSTALLER v${data.version}`;
 
       console.log("Updated download link:", url);
   })
