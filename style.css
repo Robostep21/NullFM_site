@@ -250,6 +250,8 @@ header{
 .models{
     display:flex;
     gap:60px;
+    align-items:center;
+    justify-content:center;
 }
 
 
@@ -266,7 +268,8 @@ header{
 html, body{
     height:100%;
     margin:0;
-    overflow:hidden; /* 🔥 важно для слайдов */
+    overflow-x:hidden;
+    overflow-y:hidden; /* оставляем контроль через JS */
 }
 
 .slide{
@@ -274,6 +277,7 @@ html, body{
     height:100vh;
 
     display:flex;
+    flex-direction:column; /* 🔥 важно */
     justify-content:center;
     align-items:center;
 
