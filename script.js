@@ -5,6 +5,13 @@ document.addEventListener('mousemove', (e)=>{
     light.style.top = e.clientY + 'px';
 });
 
+function forceTop(){
+    window.scrollTo(0, 0);
+}
+
+window.addEventListener("load", forceTop);
+window.addEventListener("pageshow", forceTop);
+window.addEventListener("beforeunload", forceTop);
 
 // FULLSCREEN VIEWER FIX
 const viewer = document.getElementById('viewer');
