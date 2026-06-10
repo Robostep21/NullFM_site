@@ -113,23 +113,21 @@ models.forEach(model => {
 
 const btn = document.querySelector(".download-btn");
 
-fetch("https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/latest.json")
+fetch("https://api.github.com/repos/Robostep21/NullFM_site/releases/latest")
   .then(r => r.json())
-  .then(data => {
+  .then(release => {
 
-      const url = `https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/${data.file}`;
+      const asset = release.assets.find(a =>
+          a.name.endsWith(".exe")
+      );
 
-      btn.innerText = `DOWNLOAD GAME v${data.version}`;
+      if (!asset) return;
 
-      btn.addEventListener("click", (e) => {
-          e.preventDefault();
+      btn.href = asset.browser_download_url;
+      btn.innerText = `DOWNLOAD GAME ${release.tag_name}`;
 
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = data.file;
-          document.body.appendChild(a);
-          a.click();
-          a.remove();
-      });
+      console.log("Latest version:", release.tag_name);
+      console.log("Download URL:", asset.browser_download_url);
 
-  });
+  })
+  .catch(err => console.error("Release fetch failed:", err));
