@@ -69,6 +69,13 @@ body{
 }
 
 
+.ticker-track {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+
 @keyframes marquee {
     from {
         transform: translateX(0);
