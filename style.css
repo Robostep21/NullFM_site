@@ -174,11 +174,7 @@ header{
 }
 
 .card{
-    display:flex;
-    flex-direction:column;
-    width:100%;
-    border-radius:18px;
-    overflow:hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .caption{
@@ -191,10 +187,9 @@ header{
 
 /* 🧊 CARD UPGRADE */
 
+
 .card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(0,255,140,0.4);
-    box-shadow:0 0 60px rgba(0,255,140,0.2);
+    transform: translateY(-6px);
 }
 
 /* IMAGE (чуть лучше интеграция в карточку) */
