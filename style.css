@@ -189,17 +189,20 @@ h1{
     font-size:1.2rem;
     color:#79ffb8;
 }
-
 .gallery{
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:100px 40px;
 
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+    repeat(3,1fr);
 
     gap:30px;
-
-    padding:100px 8%;
 }
 
 .card{
