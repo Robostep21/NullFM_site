@@ -12,6 +12,23 @@ body{
     overflow-x:hidden;
 }
 
+/* 💡 УСИЛЕННЫЙ СВЕТ */
+.cursor-light{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    pointer-events:none;
+    background:radial-gradient(circle,
+        rgba(0,255,140,0.25),
+        rgba(0,255,140,0.08),
+        transparent 70%
+    );
+    transform:translate(-50%,-50%);
+    mix-blend-mode:screen;
+    filter:blur(2px);
+}
+
 /* HEADER */
 header{
     display:flex;
@@ -21,27 +38,6 @@ header{
     width:100%;
     top:0;
     z-index:10;
-}
-
-.logo{
-    font-weight:700;
-    letter-spacing:3px;
-}
-
-.version{
-    opacity:0.5;
-}
-
-/* CURSOR LIGHT */
-.cursor-light{
-    position:fixed;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    pointer-events:none;
-    background:radial-gradient(circle, rgba(0,255,120,0.15), transparent 60%);
-    transform:translate(-50%,-50%);
-    mix-blend-mode:screen;
 }
 
 /* HERO */
@@ -57,14 +53,10 @@ header{
 .hero h1{
     font-size:80px;
     letter-spacing:10px;
-    text-shadow:0 0 20px rgba(0,255,120,0.3);
+    text-shadow:0 0 40px rgba(0,255,140,0.35);
 }
 
-.hero p{
-    opacity:0.6;
-    margin-top:10px;
-}
-
+/* BUTTON */
 .download-btn{
     margin-top:30px;
     padding:15px 30px;
@@ -72,21 +64,78 @@ header{
     color:#00ff88;
     text-decoration:none;
     transition:0.3s;
+    box-shadow:0 0 25px rgba(0,255,140,0.2);
 }
 
 .download-btn:hover{
     background:#00ff88;
     color:black;
     transform:translateY(-3px);
+    box-shadow:0 0 60px rgba(0,255,140,0.5);
 }
 
-/* TICKER */
+/* 📺 ГАЛЕРЕЯ - ГОРИЗОНТАЛЬНЫЕ СКРИНЫ */
+.gallery{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:60px;
+    flex-wrap:wrap;
+}
+
+.gallery-img{
+    width:320px;
+    height:180px;          /* 🔥 фикс горизонтального формата */
+    object-fit:cover;      /* 🔥 обрезка без искажений */
+    cursor:pointer;
+
+    border:1px solid rgba(0,255,140,0.25);
+    transition:0.25s;
+
+    box-shadow:0 0 20px rgba(0,255,140,0.08);
+}
+
+.gallery-img:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 50px rgba(0,255,140,0.35);
+    border-color:rgba(0,255,140,0.6);
+}
+
+/* FULLSCREEN VIEWER */
+#viewer{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.97);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;   /* 🔥 фикс кликов */
+}
+
+#viewer img{
+    max-width:90%;
+    max-height:90%;
+    box-shadow:0 0 80px rgba(0,255,140,0.25);
+}
+
+#closeViewer{
+    position:absolute;
+    top:20px;
+    right:30px;
+    font-size:34px;
+    cursor:pointer;
+    color:white;
+    text-shadow:0 0 20px rgba(0,255,140,0.4);
+}
+
+/* TICKER СИЛЬНЕЕ СВЕТ */
 .ticker{
     position:fixed;
     bottom:0;
     width:100%;
     overflow:hidden;
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.6);
+    border-top:1px solid rgba(0,255,140,0.2);
 }
 
 .ticker-text{
@@ -94,53 +143,10 @@ header{
     display:inline-block;
     padding:10px;
     animation:move 12s linear infinite;
+    text-shadow:0 0 10px rgba(0,255,140,0.4);
 }
 
 @keyframes move{
     0%{transform:translateX(100%);}
     100%{transform:translateX(-100%);}
-}
-
-/* GALLERY */
-.gallery{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    padding:50px;
-}
-
-.gallery-img{
-    width:250px;
-    transition:0.3s;
-    cursor:pointer;
-    border:1px solid rgba(0,255,120,0.2);
-}
-
-.gallery-img:hover{
-    transform:translateY(-10px) scale(1.05);
-    box-shadow:0 0 30px rgba(0,255,120,0.2);
-}
-
-/* VIEWER */
-#viewer{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.95);
-    display:none;
-    justify-content:center;
-    align-items:center;
-}
-
-#viewer img{
-    max-width:90%;
-    max-height:90%;
-}
-
-#closeViewer{
-    position:absolute;
-    top:20px;
-    right:30px;
-    font-size:30px;
-    cursor:pointer;
-    color:white;
 }
