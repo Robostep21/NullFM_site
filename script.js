@@ -119,9 +119,17 @@ fetch("https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/la
 
       const url = `https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/${data.file}`;
 
-      btn.href = url;
-      btn.innerText = `DOWNLOAD INSTALLER v${data.version}`;
+      btn.innerText = `DOWNLOAD GAME v${data.version}`;
 
-      console.log("Updated download link:", url);
-  })
-  .catch(err => console.error("Update fetch failed:", err));
+      btn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = data.file;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+      });
+
+  });
