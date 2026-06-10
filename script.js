@@ -81,7 +81,9 @@ const models = document.querySelectorAll(".drag-rotate");
 models.forEach(model => {
     let isDown = false;
     let startX = 0;
-    let currentRotation = 0;
+    let yaw = 0;
+
+    model.style.cursor = "grab";
 
     model.addEventListener("mousedown", (e) => {
         isDown = true;
@@ -100,8 +102,11 @@ models.forEach(model => {
         const deltaX = e.clientX - startX;
         startX = e.clientX;
 
-        currentRotation += deltaX * 0.5;
+        yaw += deltaX * 0.5;
 
-        model.cameraOrbit = `${currentRotation}deg 75deg 105%`;
+        model.setAttribute(
+            "camera-orbit",
+            `${yaw}deg 75deg 105%`
+        );
     });
 });
