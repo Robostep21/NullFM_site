@@ -117,7 +117,7 @@ fetch("https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/la
   .then(r => r.json())
   .then(data => {
 
-      const url = `https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/${data.file}`;
+      const url = `https://raw.githubusercontent.com/Robostep21/NullFM_site/main/Installs/latest.json${data.file}`;
 
       btn.href = url;
       btn.innerText = `DOWNLOAD GAME v${data.version}`;
