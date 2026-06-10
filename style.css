@@ -59,25 +59,22 @@ body{
     padding-bottom:40px;
 }
 
-.ticker-track {
-    display: flex;
-    width: max-content;
-    animation: scroll 12s linear infinite;
-}
 
 
 .ticker-text {
+    position: absolute;
     white-space: nowrap;
-    padding-right: 80px;
+    left: 100%;
+    animation: marquee 12s linear infinite;
 }
 
 
-@keyframes scroll {
-    0% {
+@keyframes marquee {
+    from {
         transform: translateX(0);
     }
-    100% {
-        transform: translateX(-50%);
+    to {
+        transform: translateX(-200%);
     }
 }
 
