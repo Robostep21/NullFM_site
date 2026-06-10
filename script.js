@@ -7,6 +7,14 @@ let mouseY = window.innerHeight/2;
 let currentX = mouseX;
 let currentY = mouseY;
 
+document.addEventListener("contextmenu", e => {
+    e.preventDefault();
+});
+
+document.addEventListener("selectstart", e => {
+    e.preventDefault();
+});
+
 document.addEventListener("keydown", (e) => {
 
     if (
