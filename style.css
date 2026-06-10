@@ -55,26 +55,18 @@ header{
     border-top: 1px solid rgba(0,255,140,0.2);
 }
 
-body{
-    padding-bottom:40px;
-}
-
-
-
-.ticker-text {
-    position: absolute;
-    white-space: nowrap;
-    left: 100%;
-    animation: marquee 12s linear infinite;
-}
-
-
 .ticker-track {
     display: block;
     position: relative;
     width: 100%;
 }
 
+.ticker-text {
+    position: absolute;
+    white-space: nowrap;
+    left: 100vw; /* старт за экраном справа */
+    animation: marquee 12s linear infinite;
+}
 
 @keyframes marquee {
     from {
@@ -83,6 +75,10 @@ body{
     to {
         transform: translateX(-200%);
     }
+}
+
+body{
+    padding-bottom:40px;
 }
 
 /* SLIDES CORE */
