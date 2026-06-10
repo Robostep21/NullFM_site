@@ -48,20 +48,27 @@ header{
 .ticker {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     overflow: hidden;
+    background: rgba(0,0,0,0.6);
+    border-top: 1px solid rgba(0,255,140,0.2);
+    z-index: 9999;
 }
 
 .ticker-track {
     display: block;
     position: relative;
     width: 100%;
+    height: 40px;
 }
 
 .ticker-text {
     position: absolute;
     white-space: nowrap;
-    left: 100vw; /* старт за экраном справа */
+
+    left: 100%;
+
     animation: marquee 12s linear infinite;
 }
 
