@@ -75,3 +75,33 @@ window.addEventListener("wheel", (e) => {
         goToSlide(currentSlide - 1);
     }
 });
+
+const models = document.querySelectorAll(".drag-rotate");
+
+models.forEach(model => {
+    let isDown = false;
+    let startX = 0;
+    let currentRotation = 0;
+
+    model.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.clientX;
+        model.style.cursor = "grabbing";
+    });
+
+    window.addEventListener("mouseup", () => {
+        isDown = false;
+        model.style.cursor = "grab";
+    });
+
+    window.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+
+        const deltaX = e.clientX - startX;
+        startX = e.clientX;
+
+        currentRotation += deltaX * 0.5;
+
+        model.cameraOrbit = `${currentRotation}deg 75deg 105%`;
+    });
+});
