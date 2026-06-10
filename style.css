@@ -7,15 +7,14 @@
 }
 
 html, body{
-    margin:0;
-    padding:0;
-    min-height:100%;
-    overflow-x:hidden;
+    width:100%;
+    height:100%;
     background:#05070a;
     color:#d6ffe7;
+    overflow-x:hidden;
 }
 
-/* 💡 LIGHT */
+/* LIGHT */
 .cursor-light{
     position:fixed;
     width:500px;
@@ -30,36 +29,66 @@ html, body{
     transform:translate(-50%,-50%);
     mix-blend-mode:screen;
     filter:blur(2px);
+    z-index:1;
 }
 
 /* HEADER */
 header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
     display:flex;
     justify-content:space-between;
     padding:20px 40px;
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:10;
+    z-index:1000;
 }
 
-/* HERO */
-.hero{
+/* TICKER */
+.ticker{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    background:rgba(0,0,0,0.6);
+    border-top:1px solid rgba(0,255,140,0.2);
+    z-index:1000;
+}
+
+.ticker-text{
+    white-space:nowrap;
+    display:inline-block;
+    padding:10px;
+    animation:move 12s linear infinite;
+}
+
+@keyframes move{
+    0%{transform:translateX(100%);}
+    100%{transform:translateX(-100%);}
+}
+
+/* SLIDES CORE */
+.slide{
+    width:100vw;
     height:100vh;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
+
+    position:relative;
+    z-index:2;
 }
 
+/* HERO */
 .hero h1{
     font-size:80px;
     letter-spacing:10px;
     text-shadow:0 0 40px rgba(0,255,140,0.35);
 }
 
-/* BUTTON */
 .download-btn{
     margin-top:30px;
     padding:15px 30px;
@@ -67,23 +96,17 @@ header{
     color:#00ff88;
     text-decoration:none;
     transition:0.3s;
-    box-shadow:0 0 25px rgba(0,255,140,0.2);
 }
 
 .download-btn:hover{
     background:#00ff88;
     color:black;
-    transform:translateY(-3px);
-    box-shadow:0 0 60px rgba(0,255,140,0.5);
 }
 
 /* MODELS */
 .models{
-    display:flex;
+    flex-direction:row;
     gap:60px;
-    align-items:center;
-    justify-content:center;
-    padding:80px 0;
 }
 
 .model{
@@ -97,22 +120,10 @@ header{
 /* GALLERY */
 .gallery{
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:25px;
     padding:60px;
     width:100%;
-}
-
-.gallery-img{
-    width:100%;
-    aspect-ratio:16/9;
-    object-fit:cover;
-    display:block;
-    transition:transform 0.35s ease;
-}
-
-.gallery-img:hover{
-    transform:translateY(-10px) scale(1.05);
 }
 
 /* CARD */
@@ -123,30 +134,42 @@ header{
     overflow:hidden;
     background:rgba(0,0,0,0.25);
     border:1px solid rgba(0,255,140,0.15);
-    transition:0.35s;
+    transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-8px) scale(1.02);
     border-color:rgba(0,255,140,0.4);
-    box-shadow:0 0 60px rgba(0,255,140,0.2);
 }
 
+/* IMAGE */
+.img-wrap{
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+}
+
+.gallery-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* TEXT */
 .card-content{
-    padding:12px 14px 16px;
+    padding:12px;
 }
 
 .caption-title{
-    font-size:12px;
-    font-weight:700;
     color:#00ff88;
+    font-size:12px;
     margin-bottom:6px;
 }
 
 .caption-text{
     font-size:11px;
-    line-height:1.5;
     opacity:0.75;
+    line-height:1.5;
 }
 
 /* FULLSCREEN */
@@ -163,59 +186,4 @@ header{
 #viewer img{
     max-width:90%;
     max-height:90%;
-    box-shadow:0 0 80px rgba(0,255,140,0.25);
-}
-
-#closeViewer{
-    position:absolute;
-    top:20px;
-    right:30px;
-    font-size:34px;
-    cursor:pointer;
-    color:white;
-}
-
-/* TICKER */
-.ticker{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    overflow:hidden;
-    background:rgba(0,0,0,0.6);
-    border-top:1px solid rgba(0,255,140,0.2);
-}
-
-.ticker-text{
-    white-space:nowrap;
-    display:inline-block;
-    padding:10px;
-    animation:move 12s linear infinite;
-}
-
-@keyframes move{
-    0%{transform:translateX(100%);}
-    100%{transform:translateX(-100%);}
-}
-
-/* REC */
-.rec{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-weight:700;
-    letter-spacing:2px;
-}
-
-.dot{
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:red;
-    box-shadow:0 0 15px red;
-    animation:blink 1s infinite;
-}
-
-@keyframes blink{
-    0%,100%{opacity:1;}
-    50%{opacity:0.2;}
 }
