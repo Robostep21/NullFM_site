@@ -1,114 +1,109 @@
-```html
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Null FM</title>
 
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
 
-<div id="light"></div>
-<div id="light2"></div>
+<div id="cursorGlow"></div>
+
+<div id="backgroundEffects"></div>
+
+<header class="topbar">
+    <div class="live-indicator">
+        <span class="live-dot"></span>
+        LIVE SIGNAL
+    </div>
+</header>
 
 <section class="hero">
 
-<div>
+```
+<div class="hero-content">
 
-<div class="wave wave1"></div>
-<div class="wave wave2"></div>
-<div class="wave wave3"></div>
+    <div class="version">
+        VERSION 2.1
+    </div>
 
-<h1>NULL FM</h1>
+    <h1>NULL FM</h1>
 
-<p>
-Version 2.1
-</p>
+    <div class="status">
+        RECEIVING TRANSMISSION...
+    </div>
 
-<p>
-Strange signals. Unknown voices.
-</p>
+    <p>
+        Strange frequencies. Unknown voices.
+        Something is still broadcasting.
+    </p>
 
-<a class="download"
-href="NullFM_install.exe"
-download>
-
-Скачать игру
-
-</a>
+    <a href="NullFM_install.exe" class="download-btn" download>
+        Скачать игру
+    </a>
 
 </div>
+```
 
 </section>
 
-<div class="ticker">
-
-<span>
-
-88.7 FM • SIGNAL LOST • 91.2 FM • UNKNOWN TRANSMISSION • 102.5 FM • NULL FM • 104.8 FM • STATIC DETECTED • 107.3 FM • SIGNAL FOUND •
-
-</span>
-
+<div class="ticker-container">
+    <div class="ticker" id="ticker">
+        SIGNAL FOUND • UNKNOWN TRANSMISSION • 88.7 FM • STATIC DETECTED • NULL FM
+    </div>
 </div>
 
 <section class="gallery">
 
-<div class="grid">
-
+```
 <div class="card">
-
-<img src="Pictures/img1.png">
-
-<h3>Трансляция</h3>
-
-<p>
-Поймайте сигнал среди шума.
-</p>
-
+    <img src="Pictures/img1.png" class="gallery-img">
+    <h3>Transmission</h3>
+    <p>Incoming signal detected.</p>
 </div>
 
 <div class="card">
-
-<img src="Pictures/img2.png">
-
-<h3>Частоты</h3>
-
-<p>
-Исследуйте неизвестные радиоканалы.
-</p>
-
+    <img src="Pictures/img2.png" class="gallery-img">
+    <h3>Frequency</h3>
+    <p>Tune into the unknown.</p>
 </div>
 
 <div class="card">
-
-<img src="Pictures/img3.png">
-
-<h3>Помехи</h3>
-
-<p>
-Не все голоса должны быть услышаны.
-</p>
-
+    <img src="Pictures/img3.png" class="gallery-img">
+    <h3>Static</h3>
+    <p>Not every voice should be heard.</p>
 </div>
-
-</div>
+```
 
 </section>
 
+<div id="viewer">
+
+```
+<div id="viewerClose">
+    ✕
+</div>
+
+<div id="viewerZoom">
+    +
+</div>
+
+<img id="viewerImage">
+```
+
+</div>
+
 <footer>
-
-NULL FM • Version 2.1
-
+    NULL FM • Version 2.1
 </footer>
 
 <script src="script.js"></script>
 
 </body>
 </html>
-```
