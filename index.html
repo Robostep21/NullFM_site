@@ -1,109 +1,52 @@
 <!DOCTYPE html>
-
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Null FM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Null FM | v2.1</title>
 
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
 
-<div id="cursorGlow"></div>
+<div class="cursor-light"></div>
 
-<div id="backgroundEffects"></div>
-
-<header class="topbar">
-    <div class="live-indicator">
-        <span class="live-dot"></span>
-        LIVE SIGNAL
-    </div>
+<header>
+    <div class="logo">NULL FM</div>
+    <div class="version">v2.1</div>
 </header>
 
+<!-- TICKER -->
+<div class="ticker">
+    <div class="ticker-text" id="tickerText">
+        ▣ SIGNAL LOCKED ▣ FREQUENCY STABLE ▣ NULL FM BROADCASTING ▣ DO NOT TUNE OUT ▣
+    </div>
+</div>
+
+<!-- HERO -->
 <section class="hero">
-
-```
-<div class="hero-content">
-
-    <div class="version">
-        VERSION 2.1
-    </div>
-
     <h1>NULL FM</h1>
+    <p>Experimental Radio Game Transmission</p>
 
-    <div class="status">
-        RECEIVING TRANSMISSION...
-    </div>
-
-    <p>
-        Strange frequencies. Unknown voices.
-        Something is still broadcasting.
-    </p>
-
-    <a href="NullFM_install.exe" class="download-btn" download>
-        Скачать игру
+    <a class="download-btn" href="NullFM_install.exe" download>
+        DOWNLOAD GAME
     </a>
-
-</div>
-```
-
 </section>
 
-<div class="ticker-container">
-    <div class="ticker" id="ticker">
-        SIGNAL FOUND • UNKNOWN TRANSMISSION • 88.7 FM • STATIC DETECTED • NULL FM
-    </div>
-</div>
-
+<!-- GALLERY -->
 <section class="gallery">
-
-```
-<div class="card">
     <img src="Pictures/img1.png" class="gallery-img">
-    <h3>Transmission</h3>
-    <p>Incoming signal detected.</p>
-</div>
-
-<div class="card">
     <img src="Pictures/img2.png" class="gallery-img">
-    <h3>Frequency</h3>
-    <p>Tune into the unknown.</p>
-</div>
-
-<div class="card">
     <img src="Pictures/img3.png" class="gallery-img">
-    <h3>Static</h3>
-    <p>Not every voice should be heard.</p>
-</div>
-```
-
 </section>
 
+<!-- FULLSCREEN VIEWER -->
 <div id="viewer">
-
-```
-<div id="viewerClose">
-    ✕
+    <span id="closeViewer">✕</span>
+    <img id="viewerImg">
 </div>
-
-<div id="viewerZoom">
-    +
-</div>
-
-<img id="viewerImage">
-```
-
-</div>
-
-<footer>
-    NULL FM • Version 2.1
-</footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
