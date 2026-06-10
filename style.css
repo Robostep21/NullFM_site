@@ -246,3 +246,28 @@ header{
     aspect-ratio:16 / 9;
     overflow:hidden;
 }
+
+
+.models{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:40px;
+
+    padding:120px 60px;
+    min-height:500px;
+
+    align-items:center;
+    justify-items:center;
+}
+
+.model{
+    width:100%;
+    max-width:500px;
+    height:400px;
+
+    background:rgba(0,0,0,0.2);
+    border:1px solid rgba(0,255,140,0.15);
+    border-radius:18px;
+
+    box-shadow:0 0 40px rgba(0,255,140,0.08);
+}
