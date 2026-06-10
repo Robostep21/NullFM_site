@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Null FM</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- REQUIRED FOR 3D MODELS -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
 <body>
 
 <div class="cursor-light"></div>
@@ -10,29 +23,24 @@
     <div class="version">v2.1</div>
 </header>
 
-<!-- TICKER (остаётся глобальным) -->
 <div class="ticker">
-    <div class="ticker-text" id="tickerText">
+    <div class="ticker-text">
         ▣ SIGNAL LOCKED ▣ FREQUENCY STABLE ▣ NULL FM BROADCASTING ▣ DO NOT TUNE OUT ▣
     </div>
 </div>
 
-<!-- 🔵 SLIDE 1: HERO -->
 <section class="slide hero">
-
     <h1>NULL FM</h1>
     <p>Experimental Radio Game Transmission</p>
 
     <a class="download-btn" href="NullFM_install.exe" download>
         DOWNLOAD GAME
     </a>
-
 </section>
 
-<!-- 🔵 SLIDE 2: MODELS -->
 <section class="slide models">
 
-    <model-viewer 
+    <model-viewer
         src="models/model1.glb"
         auto-rotate
         rotation-per-second="20deg"
@@ -40,7 +48,7 @@
         class="model">
     </model-viewer>
 
-    <model-viewer 
+    <model-viewer
         src="models/model2.glb"
         auto-rotate
         rotation-per-second="15deg"
@@ -50,7 +58,6 @@
 
 </section>
 
-<!-- 🔵 SLIDE 3: GALLERY -->
 <section class="slide gallery">
 
     <div class="card">
@@ -61,8 +68,7 @@
         <div class="card-content">
             <div class="caption-title">Signal Core / Main Environment</div>
             <div class="caption-text">
-                Зафиксирован нестабильный радио-сигнал, исходящий из глубин неизвестного источника.
-                Пространство выглядит нестабильным, как будто реальность не завершена.
+                Зафиксирован нестабильный радио-сигнал.
             </div>
         </div>
     </div>
@@ -75,7 +81,7 @@
         <div class="card-content">
             <div class="caption-title">Radio Interface Layer</div>
             <div class="caption-text">
-                Интерфейс передачи повреждён. Возможно, система продолжает работу без оператора.
+                Интерфейс повреждён.
             </div>
         </div>
     </div>
@@ -88,19 +94,19 @@
         <div class="card-content">
             <div class="caption-title">Unknown Transmission Zone</div>
             <div class="caption-text">
-                Локация не совпадает с известными координатами.
-                Присутствуют признаки сигнальной аномалии.
+                Аномалия сигнала обнаружена.
             </div>
         </div>
     </div>
 
 </section>
 
-<!-- FULLSCREEN VIEWER -->
 <div id="viewer">
     <span id="closeViewer">✕</span>
     <img id="viewerImg">
 </div>
 
 <script src="script.js"></script>
+
 </body>
+</html>
