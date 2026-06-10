@@ -1,52 +1,42 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Null FM | v2.1</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-</head>
-
 <body>
 
-    <div class="cursor-light"></div>
+<div class="cursor-light"></div>
 
-    <header>
-        <div class="rec">
-            <span class="dot"></span>
-            REC
-        </div>
-        <div class="version">v2.1</div>
-    </header>
-
-    <!-- TICKER -->
-    <div class="ticker">
-        <div class="ticker-text" id="tickerText">
-            ▣ SIGNAL LOCKED ▣ FREQUENCY STABLE ▣ NULL FM BROADCASTING ▣ DO NOT TUNE OUT ▣
-        </div>
+<header>
+    <div class="rec">
+        <span class="dot"></span>
+        REC
     </div>
+    <div class="version">v2.1</div>
+</header>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>NULL FM</h1>
-        <p>Experimental Radio Game Transmission</p>
+<!-- TICKER (остаётся глобальным) -->
+<div class="ticker">
+    <div class="ticker-text" id="tickerText">
+        ▣ SIGNAL LOCKED ▣ FREQUENCY STABLE ▣ NULL FM BROADCASTING ▣ DO NOT TUNE OUT ▣
+    </div>
+</div>
 
-        <a class="download-btn" href="NullFM_install.exe" download>
-            DOWNLOAD GAME
-        </a>
-    </section>
+<!-- 🔵 SLIDE 1: HERO -->
+<section class="slide hero">
 
-<section class="models">
+    <h1>NULL FM</h1>
+    <p>Experimental Radio Game Transmission</p>
+
+    <a class="download-btn" href="NullFM_install.exe" download>
+        DOWNLOAD GAME
+    </a>
+
+</section>
+
+<!-- 🔵 SLIDE 2: MODELS -->
+<section class="slide models">
 
     <model-viewer 
         src="models/model1.glb"
         auto-rotate
         rotation-per-second="20deg"
         camera-controls
-        shadow-intensity="1"
         class="model">
     </model-viewer>
 
@@ -55,66 +45,62 @@
         auto-rotate
         rotation-per-second="15deg"
         camera-controls
-        shadow-intensity="1"
         class="model">
     </model-viewer>
 
 </section>
 
-    <!-- GALLERY -->
-<section class="gallery">
+<!-- 🔵 SLIDE 3: GALLERY -->
+<section class="slide gallery">
 
     <div class="card">
-    <div class="img-wrap">
-        <img src="Pictures/img1.png" class="gallery-img">
-    </div>
+        <div class="img-wrap">
+            <img src="Pictures/img1.png" class="gallery-img">
+        </div>
 
         <div class="card-content">
             <div class="caption-title">Signal Core / Main Environment</div>
             <div class="caption-text">
                 Зафиксирован нестабильный радио-сигнал, исходящий из глубин неизвестного источника.
-                Пространство вокруг выглядит "проваленным", как будто данные не полностью загружены в реальность.
+                Пространство выглядит нестабильным, как будто реальность не завершена.
             </div>
         </div>
     </div>
 
     <div class="card">
-    <div class="img-wrap">
-        <img src="Pictures/img2.png" class="gallery-img">
-    </div>
+        <div class="img-wrap">
+            <img src="Pictures/img2.png" class="gallery-img">
+        </div>
 
         <div class="card-content">
             <div class="caption-title">Radio Interface Layer</div>
             <div class="caption-text">
-                Интерфейс передачи повреждён. Некоторые элементы UI выглядят как остаточные следы предыдущих трансляций.
-                Возможно, система продолжает работать без оператора.
+                Интерфейс передачи повреждён. Возможно, система продолжает работу без оператора.
             </div>
         </div>
     </div>
 
     <div class="card">
-    <div class="img-wrap">
-        <img src="Pictures/img3.png" class="gallery-img">
-    </div>
+        <div class="img-wrap">
+            <img src="Pictures/img3.png" class="gallery-img">
+        </div>
 
         <div class="card-content">
             <div class="caption-title">Unknown Transmission Zone</div>
             <div class="caption-text">
                 Локация не совпадает с известными координатами.
-                Присутствуют признаки аномальной радиации сигнала и временных искажений.
+                Присутствуют признаки сигнальной аномалии.
             </div>
         </div>
     </div>
 
 </section>
 
-    <!-- FULLSCREEN VIEWER -->
-    <div id="viewer">
-        <span id="closeViewer">✕</span>
-        <img id="viewerImg">
-    </div>
+<!-- FULLSCREEN VIEWER -->
+<div id="viewer">
+    <span id="closeViewer">✕</span>
+    <img id="viewerImg">
+</div>
 
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
-</html>
