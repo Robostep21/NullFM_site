@@ -111,23 +111,39 @@ models.forEach(model => {
     });
 });
 
-const btn = document.querySelector(".download-btn");
+async function loadLatestRelease() {
+    try {
+        const response = await fetch(
+            "https://api.github.com/repos/Robostep21/NullFM_site/releases/latest"
+        );
 
-fetch("https://api.github.com/repos/Robostep21/NullFM_site/releases/latest")
-  .then(r => r.json())
-  .then(release => {
+        if (!response.ok) {
+            throw new Error("Не удалось получить релиз");
+        }
 
-      const asset = release.assets.find(a =>
-          a.name.endsWith(".exe")
-      );
+        const release = await response.json();
 
-      if (!asset) return;
+        const versionElement = document.getElementById("version");
+        const downloadButton = document.getElementById("downloadBtn");
 
-      btn.href = asset.browser_download_url;
-      btn.innerText = `DOWNLOAD GAME ${release.tag_name}`;
+        versionElement.textContent = `Версия: ${release.tag_name}`;
 
-      console.log("Latest version:", release.tag_name);
-      console.log("Download URL:", asset.browser_download_url);
+        if (release.assets && release.assets.length > 0) {
+            downloadButton.href = release.assets[0].browser_download_url;
+            downloadButton.textContent = `Скачать ${release.tag_name}`;
+        } else {
+            downloadButton.textContent = "Файл не найден";
+            downloadButton.removeAttribute("href");
+        }
+    } catch (error) {
+        console.error(error);
 
-  })
-  .catch(err => console.error("Release fetch failed:", err));
+        document.getElementById("version").textContent =
+            "Ошибка загрузки версии";
+
+        document.getElementById("downloadBtn").textContent =
+            "Недоступно";
+    }
+}
+
+loadLatestRelease();
