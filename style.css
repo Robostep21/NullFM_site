@@ -173,8 +173,24 @@ header{
     50%{opacity:0.2;}
 }
 
+/* 🧊 CARD UPGRADE */
+
 .card{
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display:flex;
+    flex-direction:column;
+
+    border-radius:18px;
+    overflow:hidden;
+
+    background:rgba(0,0,0,0.25);
+    border:1px solid rgba(0,255,140,0.15);
+
+    box-shadow:0 0 20px rgba(0,255,140,0.05);
+
+    transform: translateZ(0); /* фикс рендера */
+    will-change: transform;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .caption{
@@ -189,10 +205,10 @@ header{
 
 
 .card:hover{
-    transform: translateY(-6px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:0 0 60px rgba(0,255,140,0.2);
+    border-color:rgba(0,255,140,0.4);
 }
-
-/* IMAGE (чуть лучше интеграция в карточку) */
 
 /* TEXT BLOCK */
 .card-content{
