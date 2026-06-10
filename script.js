@@ -1,179 +1,78 @@
-```js
-const glow = document.getElementById("cursorGlow");
+// MOUSE LIGHT
+const light = document.querySelector('.cursor-light');
 
-let mouseX = window.innerWidth/2;
-let mouseY = window.innerHeight/2;
-
-let currentX = mouseX;
-let currentY = mouseY;
-
-document.addEventListener("contextmenu", e => {
-    e.preventDefault();
+document.addEventListener('mousemove', (e)=>{
+    light.style.left = e.clientX + 'px';
+    light.style.top = e.clientY + 'px';
 });
 
-document.addEventListener("selectstart", e => {
-    e.preventDefault();
-});
 
-document.addEventListener("keydown", (e) => {
+// GALLERY FULLSCREEN
+const viewer = document.getElementById('viewer');
+const viewerImg = document.getElementById('viewerImg');
+const closeBtn = document.getElementById('closeViewer');
 
-    if (
-        (e.ctrlKey && e.key.toLowerCase() === "c") ||
-        (e.ctrlKey && e.key.toLowerCase() === "a") ||
-        (e.ctrlKey && e.key.toLowerCase() === "s") ||
-        (e.ctrlKey && e.key.toLowerCase() === "u")
-    ) {
-        e.preventDefault();
-    }
-
-});
-
-document.addEventListener("mousemove",e=>{
-
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-});
-
-function animateGlow(){
-
-    currentX += (mouseX-currentX)*0.08;
-    currentY += (mouseY-currentY)*0.08;
-
-    glow.style.left=currentX+"px";
-    glow.style.top=currentY+"px";
-
-    requestAnimationFrame(animateGlow);
-}
-
-animateGlow();
-
-setInterval(()=>{
-
-    const wave=document.createElement("div");
-
-    wave.className="wave-bg";
-
-    wave.style.left=Math.random()*window.innerWidth+"px";
-    wave.style.top=Math.random()*window.innerHeight+"px";
-
-    document
-    .getElementById("backgroundEffects")
-    .appendChild(wave);
-
-    setTimeout(()=>{
-        wave.remove();
-    },6000);
-
-},1500);
-
-const messages=[
-
-"UNKNOWN TRANSMISSION",
-"88.7 FM SIGNAL FOUND",
-"VOICE DETECTED",
-"STATIC DETECTED",
-"NULL FM ACTIVE"
-];
-
-const ticker=document.getElementById("ticker");
-
-let index=0;
-
-function cycleTicker(){
-
-    ticker.style.transition="none";
-    ticker.style.transform="translateX(100vw)";
-
-    setTimeout(()=>{
-
-        ticker.innerText=
-        messages[index];
-
-        ticker.style.transition=
-        "transform 2s ease";
-
-        ticker.style.transform=
-        "translateX(0)";
-
-        index=
-        (index+1)%messages.length;
-
-        setTimeout(()=>{
-
-            ticker.style.transition=
-            "transform 2s ease";
-
-            ticker.style.transform=
-            "translateX(-100vw)";
-
-        },3500);
-
-    },50);
-}
-
-cycleTicker();
-setInterval(cycleTicker,7500);
-
-document.querySelectorAll(".card")
-.forEach(card=>{
-
-    card.addEventListener("mousemove",e=>{
-
-        const rect=
-        card.getBoundingClientRect();
-
-        card.style.setProperty(
-            "--x",
-            `${e.clientX-rect.left}px`
-        );
-
-        card.style.setProperty(
-            "--y",
-            `${e.clientY-rect.top}px`
-        );
+document.querySelectorAll('.gallery-img').forEach(img=>{
+    img.addEventListener('click', ()=>{
+        viewer.style.display = 'flex';
+        viewerImg.src = img.src;
     });
 });
 
-const viewer =
-document.getElementById("viewer");
-
-const viewerImage =
-document.getElementById("viewerImage");
-
-document
-.querySelectorAll(".gallery-img")
-.forEach(img=>{
-
-    img.addEventListener("click",()=>{
-
-        viewerImage.src=img.src;
-
-        viewer.classList.add("active");
-    });
-});
-
-document
-.getElementById("viewerClose")
-.onclick=()=>{
-
-    viewer.classList.remove("active");
+closeBtn.onclick = () => {
+    viewer.style.display = 'none';
 };
 
-viewer.onclick=(e)=>{
-
-    if(e.target===viewer){
-
-        viewer.classList.remove("active");
+viewer.onclick = (e)=>{
+    if(e.target === viewer){
+        viewer.style.display = 'none';
     }
 };
 
-document.addEventListener(
-"keydown",
-e=>{
-
-    if(e.key==="Escape"){
-
-        viewer.classList.remove("active");
+// ESC CLOSE
+document.addEventListener('keydown', (e)=>{
+    if(e.key === "Escape"){
+        viewer.style.display = 'none';
     }
 });
-```
+
+
+// TICKER CENTER PAUSE LOGIC
+const ticker = document.getElementById('tickerText');
+
+function restartTicker(){
+    ticker.style.animation = 'none';
+
+    setTimeout(()=>{
+        ticker.style.animation = 'move 12s linear infinite';
+    }, 3000); // pause in "center feeling"
+}
+
+setInterval(restartTicker, 12000);
+
+
+// RANDOM BACKGROUND GLOW CIRCLES
+function spawnGlow(){
+    const c = document.createElement('div');
+    c.style.position = 'fixed';
+    c.style.width = '10px';
+    c.style.height = '10px';
+    c.style.borderRadius = '50%';
+    c.style.background = 'rgba(0,255,120,0.15)';
+    c.style.left = Math.random()*window.innerWidth + 'px';
+    c.style.top = Math.random()*window.innerHeight + 'px';
+    c.style.pointerEvents = 'none';
+    c.style.transition = '2s';
+    document.body.appendChild(c);
+
+    setTimeout(()=>{
+        c.style.opacity = 0;
+        c.style.transform = 'scale(20)';
+    }, 50);
+
+    setTimeout(()=>{
+        c.remove();
+    }, 2000);
+}
+
+setInterval(spawnGlow, 800);
