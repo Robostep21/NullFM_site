@@ -114,35 +114,32 @@ models.forEach(model => {
 async function loadLatestRelease() {
     try {
         const response = await fetch(
-            "https://api.github.com/repos/Robostep21/NullFM_site/releases/latest"
+            "https://api.github.com/repos/Robostep21/NullFM_site/releases"
         );
 
-        if (!response.ok) {
-            throw new Error("Не удалось получить релиз");
+        const releases = await response.json();
+
+        if (!Array.isArray(releases) || releases.length === 0) {
+            throw new Error("Релизы не найдены");
         }
 
-        const release = await response.json();
+        const release = releases[0];
 
-        const versionElement = document.getElementById("version");
-        const downloadButton = document.getElementById("downloadBtn");
+        document.getElementById("version").textContent = release.tag_name;
 
-        versionElement.textContent = `Версия: ${release.tag_name}`;
+        const downloadBtn = document.getElementById("downloadBtn");
 
-        if (release.assets && release.assets.length > 0) {
-            downloadButton.href = release.assets[0].browser_download_url;
-            downloadButton.textContent = `Скачать ${release.tag_name}`;
+        if (release.assets.length > 0) {
+            downloadBtn.href = release.assets[0].browser_download_url;
+            downloadBtn.textContent = "DOWNLOAD INSTALLER";
         } else {
-            downloadButton.textContent = "Файл не найден";
-            downloadButton.removeAttribute("href");
+            downloadBtn.textContent = "NO FILE";
         }
     } catch (error) {
         console.error(error);
 
-        document.getElementById("version").textContent =
-            "Ошибка загрузки версии";
-
-        document.getElementById("downloadBtn").textContent =
-            "Недоступно";
+        document.getElementById("version").textContent = "OFFLINE";
+        document.getElementById("downloadBtn").textContent = "DOWNLOAD ERROR";
     }
 }
 
