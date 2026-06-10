@@ -247,27 +247,35 @@ header{
     overflow:hidden;
 }
 
-
 .models{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:40px;
-
-    padding:120px 60px;
-    min-height:500px;
-
-    align-items:center;
-    justify-items:center;
+    display:flex;
+    gap:60px;
 }
 
+
 .model{
-    width:100%;
-    max-width:500px;
-    height:400px;
+    width:40vw;
+    height:75vh; /* 🔥 теперь реально вертикально большое окно */
+
+    border-radius:20px;
+    border:1px solid rgba(0,255,140,0.2);
 
     background:rgba(0,0,0,0.2);
-    border:1px solid rgba(0,255,140,0.15);
-    border-radius:18px;
+}
 
-    box-shadow:0 0 40px rgba(0,255,140,0.08);
+html, body{
+    height:100%;
+    margin:0;
+    overflow:hidden; /* 🔥 важно для слайдов */
+}
+
+.slide{
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
 }
