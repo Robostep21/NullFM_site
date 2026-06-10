@@ -1,0 +1,249 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Null FM | v2.1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#090909;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#7b2cff55,transparent 40%),
+    radial-gradient(circle at bottom right,#00d4ff44,transparent 40%);
+    z-index:-2;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:url('/Pictures/img1.jpg') center/cover;
+    opacity:.18;
+}
+
+.hero-content{
+    max-width:900px;
+    z-index:1;
+}
+
+.version{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:999px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(4rem,10vw,8rem);
+    font-weight:800;
+    letter-spacing:-4px;
+    background:linear-gradient(90deg,#fff,#00d4ff,#7b2cff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#d0d0d0;
+    line-height:1.7;
+}
+
+.download-btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:18px 42px;
+    font-size:1.1rem;
+    font-weight:700;
+    text-decoration:none;
+    color:white;
+    border-radius:16px;
+    background:linear-gradient(135deg,#7b2cff,#00d4ff);
+    box-shadow:0 0 30px rgba(0,212,255,.35);
+    transition:.25s;
+}
+
+.download-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 0 50px rgba(0,212,255,.55);
+}
+
+.gallery{
+    padding:120px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:60px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    overflow:hidden;
+    border-radius:24px;
+    background:#121212;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:24px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#b8b8b8;
+    line-height:1.6;
+}
+
+.footer{
+    text-align:center;
+    padding:60px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#888;
+}
+
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.2;
+}
+
+.glow1{
+    background:#7b2cff;
+    top:-150px;
+    left:-150px;
+}
+
+.glow2{
+    background:#00d4ff;
+    right:-150px;
+    bottom:-150px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="version">
+            Version 2.1
+        </div>
+
+        <h1>NULL FM</h1>
+
+        <p class="subtitle">
+            Погрузитесь в загадочный мир радиошума, странных сигналов
+            и неизвестных голосов. Исследуйте, слушайте и раскройте тайны,
+            скрывающиеся за частотами.
+        </p>
+
+        <a class="download-btn" href="NullFM_install.exe" download>
+            Скачать игру
+        </a>
+
+    </div>
+
+</section>
+
+<section class="gallery">
+
+    <h2 class="section-title">Скриншоты</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="/Pictures/img1.jpg" alt="">
+            <div class="card-content">
+                <h3>Исследование</h3>
+                <p>Откройте для себя атмосферные локации и загадочные сигналы.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/Pictures/img2.jpg" alt="">
+            <div class="card-content">
+                <h3>Атмосфера</h3>
+                <p>Минималистичный визуальный стиль и напряжённое окружение.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/Pictures/img3.jpg" alt="">
+            <div class="card-content">
+                <h3>Тайны эфира</h3>
+                <p>Каждая частота может скрывать новую историю.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    NULL FM • Version 2.1
+</footer>
+
+</body>
+</html>
+```
