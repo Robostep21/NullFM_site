@@ -56,6 +56,10 @@ header{
     z-index:1000;
 }
 
+body{
+    padding-bottom:40px;
+}
+
 .ticker-text{
     white-space:nowrap;
     display:inline-block;
