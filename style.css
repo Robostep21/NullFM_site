@@ -45,31 +45,40 @@ header{
 }
 
 /* TICKER */
-.ticker{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    overflow:hidden;
-    background:rgba(0,0,0,0.6);
-    border-top:1px solid rgba(0,255,140,0.2);
-    z-index:1000;
+.ticker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(0,0,0,0.6);
+    border-top: 1px solid rgba(0,255,140,0.2);
 }
 
 body{
     padding-bottom:40px;
 }
 
-.ticker-text{
-    white-space:nowrap;
-    display:inline-block;
-    padding:10px;
-    animation:move 12s linear infinite;
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 12s linear infinite;
 }
 
-@keyframes move{
-    0%{transform:translateX(100%);}
-    100%{transform:translateX(-100%);}
+
+.ticker-text {
+    white-space: nowrap;
+    padding-right: 80px;
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* SLIDES CORE */
