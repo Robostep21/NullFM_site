@@ -6,6 +6,8 @@
     <title>Null FM | v2.1</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -36,6 +38,28 @@
             DOWNLOAD GAME
         </a>
     </section>
+
+<section class="models">
+
+    <model-viewer 
+        src="models/model1.glb"
+        auto-rotate
+        rotation-per-second="20deg"
+        camera-controls
+        shadow-intensity="1"
+        class="model">
+    </model-viewer>
+
+    <model-viewer 
+        src="models/model2.glb"
+        auto-rotate
+        rotation-per-second="15deg"
+        camera-controls
+        shadow-intensity="1"
+        class="model">
+    </model-viewer>
+
+</section>
 
     <!-- GALLERY -->
 <section class="gallery">
