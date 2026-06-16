@@ -44,10 +44,13 @@
 <section class="slide models">
 
     <div class="model-block">
-<model-viewer 
+<model-viewer
     src="models/model1.glb"
     auto-rotate
     camera-controls
+    camera-orbit="0deg 90deg 105%"
+    min-camera-orbit="auto 90deg 105%"
+    max-camera-orbit="auto 90deg 105%"
     class="model">
 </model-viewer>
 
@@ -57,11 +60,14 @@
     </div>
 
     <div class="model-block">
-<model-viewer 
+<model-viewer
     src="models/model2.glb"
     auto-rotate
-    disable-pan
-    class="model drag-rotate">
+    camera-controls
+    camera-orbit="0deg 90deg 105%"
+    min-camera-orbit="auto 90deg 105%"
+    max-camera-orbit="auto 90deg 105%"
+    class="model">
 </model-viewer>
 
         <div class="model-text">
