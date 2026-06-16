@@ -347,9 +347,9 @@ html, body {
     }
 
     .tg-footer-btn {
-        right: 50%;
+        right: 15%;
         transform: translateX(50%);
-        bottom: 60px;
+        bottom: 80px;
     }
 
     .credits-text {
