@@ -67,6 +67,7 @@ function goToSlide(i){
 }
 
 window.addEventListener("wheel", (e) => {
+    e.preventDefault();
     if(locked) return;
 
     if(e.deltaY > 0){
