@@ -266,18 +266,21 @@ body{
 }
 
 .credits-text{
+    position:absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%, -50%);
     font-size:12px;
     letter-spacing:2px;
     opacity:0.6;
     text-align:center;
-
-    transform:translateY(-60px); /* чуть выше центра */
 }
+
 .tg-footer-btn{
     position:absolute;
     right:40px;
-    bottom:80px; /* чуть выше нижнего края */
-
+    bottom:120px; /* поднимаем выше */
+    
     width:64px;
     height:64px;
 
@@ -286,10 +289,8 @@ body{
     align-items:center;
 
     border-radius:14px;
-
     background:rgba(0,255,140,0.05);
     border:1px solid rgba(0,255,140,0.2);
-
     transition:0.25s;
 }
 
