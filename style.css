@@ -102,6 +102,8 @@ body{
 
     position:relative;
     z-index:2;
+
+    scroll-snap-align: start;
 }
 
 /* HERO */
@@ -306,5 +308,6 @@ body{
 }
 
 html, body {
-    overflow: hidden;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
