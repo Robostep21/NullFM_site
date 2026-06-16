@@ -68,17 +68,13 @@ function goToSlide(i){
     }, 800);
 }
 
-window.addEventListener("wheel", (e) => {
-    e.preventDefault();
-
-    if (locked) return;
-
+document.addEventListener("wheel", (e) => {
     if (e.deltaY > 0) {
-        goToSlide(currentSlide + 1);
+        window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
     } else {
-        goToSlide(currentSlide - 1);
+        window.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
     }
-}, { passive: false });
+}, { passive: true });
 
 const models = document.querySelectorAll(".drag-rotate");
 
