@@ -254,16 +254,14 @@ body{
 /* CREDITS */
 
 .credits{
-    min-height:200px;
+    position:relative;
+
+    width:100vw;
+    height:100vh;
 
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-
-    gap:20px;
-
-    padding:80px 20px;
 }
 
 .credits-text{
@@ -271,9 +269,16 @@ body{
     letter-spacing:2px;
     opacity:0.6;
     text-align:center;
+
+    transform:translateY(-60px); /* чуть выше центра */
 }
 
 .tg-footer-btn{
+    position:absolute;
+
+    right:40px;
+    bottom:80px; /* чуть выше нижнего края */
+
     width:64px;
     height:64px;
 
