@@ -317,18 +317,22 @@ html, body {
 @media (max-width: 768px) {
 
     .hero h1 {
-        font-size: 36px;
-        letter-spacing: 4px;
+        font-size: 52px;
+        letter-spacing: 6px;
     }
 
     .models {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
+        overflow-y: auto;
+        height: 100vh;
+        justify-content: flex-start;
+        padding: 80px 20px 60px;
     }
 
     .model {
         width: 85vw;
-        height: 50vh;
+        height: 35vh;
     }
 
     .model-text {
