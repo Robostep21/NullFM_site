@@ -267,7 +267,7 @@ body{
 
 .credits-text{
     position:absolute;
-    top:45%;
+    bottom:210px;
     left:50%;
     transform:translate(-50%, -50%);
     font-size:12px;
@@ -279,7 +279,7 @@ body{
 .tg-footer-btn{
     position:absolute;
     right:40px;
-    bottom:200px; /* поднимаем выше */
+    bottom:210px; /* поднимаем выше */
     
     width:64px;
     height:64px;
