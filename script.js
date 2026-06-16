@@ -8,8 +8,10 @@ document.addEventListener('mousemove', (e)=>{
 function forceTop(){
     window.scrollTo(0, 0);
 }
-
-window.addEventListener("load", forceTop);
+window.addEventListener("load", () => {
+    forceTop();
+    loadLatestRelease();
+});
 window.addEventListener("pageshow", forceTop);
 window.addEventListener("beforeunload", forceTop);
 
