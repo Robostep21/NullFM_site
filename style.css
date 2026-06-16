@@ -354,7 +354,7 @@ html, body {
 
     .credits-text {
         bottom: 120px;
-        right: 50%;
+        left: 15px;
     }
 
 }
