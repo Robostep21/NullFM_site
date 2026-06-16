@@ -309,3 +309,16 @@ html, body {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
 }
+
+
+
+
+/* ============ MOBILE ============ */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+}
