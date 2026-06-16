@@ -257,10 +257,8 @@ body{
 
 .credits{
     position:relative;
-
     width:100vw;
     height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
@@ -274,10 +272,8 @@ body{
 
     transform:translateY(-60px); /* чуть выше центра */
 }
-
 .tg-footer-btn{
     position:absolute;
-
     right:40px;
     bottom:80px; /* чуть выше нижнего края */
 
@@ -294,11 +290,6 @@ body{
     border:1px solid rgba(0,255,140,0.2);
 
     transition:0.25s;
-}
-
-.tg-footer-btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 0 25px rgba(0,255,140,0.25);
 }
 
 .tg-footer-btn img{
