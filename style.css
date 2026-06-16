@@ -352,4 +352,8 @@ html, body {
         bottom: 60px;
     }
 
+    .credits-text {
+        bottom: 140px;
+    }
+
 }
