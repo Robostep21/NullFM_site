@@ -346,4 +346,10 @@ html, body {
         padding: 20px;
     }
 
+    .tg-footer-btn {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 60px;
+    }
+
 }
