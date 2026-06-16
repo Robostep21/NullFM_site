@@ -304,3 +304,7 @@ body{
     height:36px;
     object-fit:contain;
 }
+
+html, body {
+    overflow: hidden;
+}
