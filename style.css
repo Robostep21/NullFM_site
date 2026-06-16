@@ -321,4 +321,19 @@ html, body {
         letter-spacing: 4px;
     }
 
+    .models {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .model {
+        width: 85vw;
+        height: 50vh;
+    }
+
+    .model-text {
+        max-width: 85vw;
+        font-size: 16px;
+    }
+
 }
