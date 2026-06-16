@@ -304,3 +304,53 @@ body{
     height:32px;
     object-fit:contain;
 }
+
+
+/* CREDITS */
+
+.credits{
+    min-height:200px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:20px;
+
+    padding:80px 20px;
+}
+
+.credits-text{
+    font-size:12px;
+    letter-spacing:2px;
+    opacity:0.6;
+    text-align:center;
+}
+
+.tg-footer-btn{
+    width:64px;
+    height:64px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:14px;
+
+    background:rgba(0,255,140,0.05);
+    border:1px solid rgba(0,255,140,0.2);
+
+    transition:0.25s;
+}
+
+.tg-footer-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 25px rgba(0,255,140,0.25);
+}
+
+.tg-footer-btn img{
+    width:36px;
+    height:36px;
+    object-fit:contain;
+}
