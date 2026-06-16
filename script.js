@@ -68,14 +68,15 @@ function goToSlide(i){
 
 window.addEventListener("wheel", (e) => {
     e.preventDefault();
-    if(locked) return;
 
-    if(e.deltaY > 0){
+    if (locked) return;
+
+    if (e.deltaY > 0) {
         goToSlide(currentSlide + 1);
     } else {
         goToSlide(currentSlide - 1);
     }
-});
+}, { passive: false });
 
 const models = document.querySelectorAll(".drag-rotate");
 
