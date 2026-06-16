@@ -76,41 +76,6 @@ document.addEventListener("wheel", (e) => {
     }
 }, { passive: true });
 
-const models = document.querySelectorAll(".drag-rotate");
-
-models.forEach(model => {
-    let isDown = false;
-    let startX = 0;
-    let yaw = 0;
-
-    model.style.cursor = "grab";
-
-    model.addEventListener("mousedown", (e) => {
-        isDown = true;
-        startX = e.clientX;
-        model.style.cursor = "grabbing";
-    });
-
-    window.addEventListener("mouseup", () => {
-        isDown = false;
-        model.style.cursor = "grab";
-    });
-
-    window.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-
-        const deltaX = e.clientX - startX;
-        startX = e.clientX;
-
-        yaw += deltaX * 0.5;
-
-        model.setAttribute(
-            "camera-orbit",
-            `${yaw}deg 75deg 105%`
-        );
-    });
-});
-
 async function loadLatestRelease() {
     try {
         const response = await fetch(
