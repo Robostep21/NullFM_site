@@ -127,6 +127,73 @@ body{
     color:black;
 }
 
+/* OTHER VERSIONS */
+.versions-toggle-btn{
+    margin-top:14px;
+    padding:10px 24px;
+    border:1px solid rgba(214,255,231,0.3);
+    background:rgba(255,255,255,0.05);
+    color:rgba(214,255,231,0.7);
+    font-size:12px;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.versions-toggle-btn:hover{
+    border-color:rgba(214,255,231,0.6);
+    color:#d6ffe7;
+    background:rgba(255,255,255,0.08);
+}
+
+.versions-list{
+    margin-top:14px;
+    width:280px;
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    transition:max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.versions-list.open{
+    max-height:260px;
+    opacity:1;
+    overflow-y:auto;
+}
+
+.version-item{
+    padding:10px 16px;
+    border:1px solid rgba(0,255,140,0.15);
+    background:rgba(0,0,0,0.25);
+    color:#bffcd9;
+    font-size:13px;
+    text-align:left;
+    cursor:pointer;
+    transition:0.2s;
+    text-decoration:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.version-item:hover{
+    border-color:rgba(0,255,140,0.5);
+    background:rgba(0,255,140,0.08);
+}
+
+.version-item .v-tag{
+    font-weight:bold;
+    color:#00ff88;
+}
+
+.version-item .v-date{
+    font-size:10px;
+    opacity:0.5;
+}
+
 /* MODELS */
 .models{
     flex-direction:row;
@@ -344,6 +411,10 @@ html, body {
         grid-template-columns: 1fr;
         gap: 16px;
         padding: 20px;
+    }
+
+    .versions-list {
+        width: 85vw;
     }
 
     .tg-footer-btn {
