@@ -1,9 +1,15 @@
 const light = document.querySelector('.cursor-light');
-
 document.addEventListener('mousemove', (e)=>{
     light.style.left = e.clientX + 'px';
     light.style.top = e.clientY + 'px';
 });
+document.addEventListener('touchmove', (e)=>{
+    const touch = e.touches[0];
+    if(touch){
+        light.style.left = touch.clientX + 'px';
+        light.style.top = touch.clientY + 'px';
+    }
+}, { passive: true });
 
 function forceTop(){
     window.scrollTo(0, 0);
