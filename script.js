@@ -96,7 +96,7 @@ async function loadLatestRelease() {
 
         if (release.assets.length > 0) {
             downloadBtn.href = release.assets[0].browser_download_url;
-            downloadBtn.textContent = "СКАЧАТЬ ПОСЛЕДНЮЮ ВЕРСИЮ";
+            downloadBtn.textContent = "СВЕЖАЯ ВЕРСИЯ";
         } else {
             downloadBtn.textContent = "НЕТУ РЕЛИЗОВ...";
         }
