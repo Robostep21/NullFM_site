@@ -96,15 +96,15 @@ async function loadLatestRelease() {
 
         if (release.assets.length > 0) {
             downloadBtn.href = release.assets[0].browser_download_url;
-            downloadBtn.textContent = "DOWNLOAD INSTALLER";
+            downloadBtn.textContent = "СКАЧАТЬ ПОСЛЕДНЮЮ ВЕРСИЮ";
         } else {
-            downloadBtn.textContent = "NO FILE";
+            downloadBtn.textContent = "НЕТУ РЕЛИЗОВ...";
         }
     } catch (error) {
         console.error(error);
 
         document.getElementById("version").textContent = "OFFLINE";
-        document.getElementById("downloadBtn").textContent = "DOWNLOAD ERROR";
+        document.getElementById("downloadBtn").textContent = "ОШИБКА ЗАГРУЗКИ";
     }
 }
 
